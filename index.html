@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Мой календарь</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Мой персональный календарь</h1>
+
+    <section id="controls" class="panel">
+      <div class="row">
+        <label for="month">Месяц</label>
+        <select id="month"></select>
+      </div>
+      <div class="row">
+        <label for="year">Год</label>
+        <select id="year"></select>
+      </div>
+      <button id="add-demo" title="Добавить демонстрационные события">Добавить демонстрацию</button>
+    </section>
+
+    <section id="calendar" class="panel">
+      <div id="days" class="grid"></div>
+    </section>
+
+    <section id="form" class="panel" aria-label="Форма добавления события">
+      <h2>Добавить событие</h2>
+      <form id="event-form">
+        <div class="row">
+          <label for="title">Название</label>
+          <input id="title" type="text" required />
+        </div>
+        <div class="row">
+          <label for="date">Дата</label>
+          <input id="date" type="date" required />
+        </div>
+        <div class="row">
+          <label for="notes">Заметки</label>
+          <textarea id="notes" rows="3"></textarea>
+        </div>
+        <button type="submit">Сохранить</button>
+        <button type="button" id="clear">Очистить всё</button>
+      </form>
+    </section>
+
+    <section id="export" class="panel" aria-label="Экспорт и импорт">
+      <h2>Экспорт / импорт</h2>
+      <button id="export-btn">Экспортировать в JSON</button>
+      <input id="import-input" type="file" accept="application/json" />
+      <button id="import-btn">Импортировать</button>
+    </section>
+
+    <section id="notes" class="panel">
+      <p>Совет: ваши события можно сохранять локально в вашем браузере. Для синхронизации на другом устройстве используйте экспорт/импорт.</p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
